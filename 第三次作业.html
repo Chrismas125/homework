@@ -21,14 +21,15 @@
         function Person(name, age) {
         this.name = name
         this.age  = age
-        this.sayname = () => {
-        console.log(this.name)
+        this.sayHi = function(hi) {
+        console.log(hi)
         }
     }
-    const obj3 = new Person('1', 20)
-    const obj4 = new Person('2', 20)
-    console.log(obj3);
-    console.log(obj4);
+    const obj3 = new Person('1', 20);
+    const obj4 = new Person('2', 20);
+    console.log(obj3.age);
+    console.log(obj4.name);
+    obj3.sayHi('hi~');
     </script>
 </head>
 <body>
