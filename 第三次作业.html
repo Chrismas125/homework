@@ -10,13 +10,15 @@
         let obj = new Object();
         obj.high = '175';
         obj.age = '20';
-        console.log(obj);
+        for (var k in obj) {
+            console.log(obj[k]);
+        }
         /* 使用对象字面量 */
         let obj1 = {
         high: '175',
         age: '20'
     }
-        console.log(obj1);
+        console.log(obj1.age);
         /* 使用构造函数创建一个对象 */
         function Person(name, age) {
         this.name = name
@@ -25,8 +27,8 @@
         console.log(hi)
         }
     }
-    const obj3 = new Person('1', 20);
-    const obj4 = new Person('2', 20);
+    var obj3 = new Person('1', 20);
+    var obj4 = new Person('2', 20);
     console.log(obj3.age);
     console.log(obj4.name);
     obj3.sayHi('hi~');
