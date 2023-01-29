@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成表格</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>代表作</th>
+                <th>特点</th>
+                <th>删除</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var dates = [{
+            name: '严星呈',
+            symbolwork: '对我而言危险的他',
+            advantage: '病娇霸总'
+        },
+        {
+            name: '沈漫宁',
+            symbolwork: '对我而言危险的他',
+            advantage: '温柔且霸道'
+        },
+        {
+            name: '原帅',
+            symbolwork: '对我而言危险的他',
+            advantage: '高冷'
+        },
+        {
+            name: '方想',
+            symbolwork: '对我而言危险的他',
+            advantage: '可爱黑客'
+        }];
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < dates.length; i++) {
+            //创建tr行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            //行里面创建单元格，数量取决于对象里属性个数
+            for (var k in dates[i]) {
+                //创建单元格
+                var td = document.createElement('td');
+                td.innerHTML = dates[i][k];
+                tr.appendChild(td);
+            }
+            //创建有删除两个字的单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href = "javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+        //删除操作
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        .box1 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(104, 104, 224);
+            /* border-radius: 30px; */
+            /* margin: 100px auto; */
+            /* box-shadow: 10px 10px 10px 10px rgb(0, 0, 0,.3); */
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(105, 210, 210);
+            /* border-radius: 60px; */
+            /* margin: 100px auto; */
+            /* box-shadow: 10px 10px 10px 10px rgb(0, 0, 0,.3); */
+        }
+
+        div:hover {
+            box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, .3);
+        }
+    </style>
+    <script>
+        var money = 100;
+        var add = 0;
+        var reduce = 0;
+        for (var i = 1; ; i++) {
+            var num = prompt('请选择所需操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if (num == 1) {
+                add = prompt('存入钱数：');
+                money += parseInt(add);
+                alert('当前余额：' + money);
+            }
+            else if (num == 2) {
+                reduce = prompt('取出钱数：');
+                money -= parseInt(reduce);
+                alert('当前余额：' + money);
+            }
+            else if (num == 3) {
+                alert('当前余额：' + money);
+            }
+            else {
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box1">浮动盒子</div>
+    <div class="box2">标准流盒子</div>
+</body>
+
+</html>
